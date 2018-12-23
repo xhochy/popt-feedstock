@@ -8,10 +8,6 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-cxx_compiler:
-- toolchain_cxx
-fortran_compiler:
-- toolchain_fort
 libiconv:
 - '1.15'
 macos_machine:
@@ -27,8 +23,6 @@ pin_run_as_build:
     max_pin: x.x.x
 zip_keys:
 - - c_compiler
-  - cxx_compiler
-  - fortran_compiler
   - channel_sources
   - channel_targets
   - build_number_decrement

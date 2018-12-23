@@ -14,14 +14,15 @@ source:
     - 0002-added-sanity-autotest.patch
 
 build:
-  number: 2001
+  number: 2002
   skip: True  # [win]
+  run_exports:
+    - {{ pin_subpackage(name, max_pin='x') }}
+
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - {{ compiler('fortran') }}
     - libiconv
     - perl
   run:
@@ -33,8 +34,6 @@ test:
     - test -f $PREFIX/lib/libpopt.a
     - test -f $PREFIX/lib/libpopt.so  # [linux]
     - test -f $PREFIX/lib/libpopt.dylib  # [osx]
-    - conda inspect linkages -p $PREFIX libiconv
-    - conda inspect objects -p $PREFIX libiconv  # [osx]
 
 about:
   home: http://rpm5.org/

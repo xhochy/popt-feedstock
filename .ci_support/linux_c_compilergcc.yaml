@@ -6,12 +6,8 @@ channel_sources:
 - conda-forge/label/gcc7,defaults
 channel_targets:
 - conda-forge gcc7
-cxx_compiler:
-- gxx
 docker_image:
-- conda/c3i-linux-64
-fortran_compiler:
-- gfortran
+- condaforge/linux-anvil-comp7
 libiconv:
 - '1.15'
 perl:
@@ -23,8 +19,6 @@ pin_run_as_build:
     max_pin: x.x.x
 zip_keys:
 - - c_compiler
-  - cxx_compiler
-  - fortran_compiler
   - channel_sources
   - channel_targets
   - docker_image
