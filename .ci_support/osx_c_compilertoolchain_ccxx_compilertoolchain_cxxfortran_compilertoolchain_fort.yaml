@@ -8,10 +8,6 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-cxx_compiler:
-- toolchain_cxx
-fortran_compiler:
-- toolchain_fort
 libiconv:
 - '1.15'
 macos_machine:
