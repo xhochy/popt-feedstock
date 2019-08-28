@@ -6,7 +6,6 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: ftp://anduin.linuxfromscratch.org/BLFS/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e728ed296fe9f069a0e005003c3d6b2dde3d9cad453422a10d6558616d304cc8
   patches:
@@ -25,6 +24,7 @@ requirements:
     - {{ compiler('c') }}
     - libiconv
     - perl
+    - make
   run:
     - libiconv
 
