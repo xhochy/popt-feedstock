@@ -1,17 +1,23 @@
 {% set name = "popt" %}
 {% set version = "1.16" %}
+{% set config_hash = "04b07fc6d9ad4fd2be7434c9ce8b03341e54ca02" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: ftp://anduin.linuxfromscratch.org/BLFS/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e728ed296fe9f069a0e005003c3d6b2dde3d9cad453422a10d6558616d304cc8
-  patches:
-    - 0001-remove-tests-58-and-59.patch  # [osx]
-    - 0002-added-sanity-autotest.patch
+  - url: ftp://anduin.linuxfromscratch.org/BLFS/{{ name }}/{{ name }}-{{ version }}.tar.gz
+    sha256: e728ed296fe9f069a0e005003c3d6b2dde3d9cad453422a10d6558616d304cc8
+    patches:
+      - 0001-remove-tests-58-and-59.patch  # [osx]
+      - 0002-added-sanity-autotest.patch
+  - fn: config-updated.guess
+    url: http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb={{ config_hash }}
+    sha256: 8202b7fde008212d6d36cccf219480f5d54cddb5452b241f47c51cb5c054193b
+  - fn: config-updated.sub
+    url: http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb={{ config_hash }}
+    sha256: 729711e8aa3228db4a3adea9ca5d60de184969a1537ac874477ce5676bee8464
 
 build:
   number: 2002
@@ -25,6 +31,7 @@ requirements:
     - {{ compiler('c') }}
     - libiconv
     - perl
+    - make
   run:
     - libiconv
 
