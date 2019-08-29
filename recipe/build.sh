@@ -2,8 +2,11 @@
 
 set -e -o pipefail
 
-curl -L 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD' > config.guess
-curl -L 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD' > config.sub
+# If platform detection fails, these should be updated in the meta.yaml from:
+# http://git.savannah.gnu.org/gitweb/?p=config.git&view=view+git+repository
+mv config-updated.guess config.guess
+mv config-updated.sub config.sub
+
 ./configure --prefix=$PREFIX
 make
 make check
