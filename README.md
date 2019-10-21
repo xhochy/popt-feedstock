@@ -22,6 +22,13 @@ Current build status
         <img alt="macOS" src="https://img.shields.io/travis/conda-forge/popt-feedstock/master.svg?label=macOS">
       </a>
     </td>
+  </tr><tr>
+    <td>Drone</td>
+    <td>
+      <a href="https://cloud.drone.io/conda-forge/popt-feedstock">
+        <img alt="linux" src="https://img.shields.io/drone/build/conda-forge/master.svg?label=Linux">
+      </a>
+    </td>
   </tr>
     
   <tr>
@@ -63,16 +70,17 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/popt-feedstock?branchName=master&jobName=osx&configuration=osx_" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>win_vc14</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=800&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/popt-feedstock?branchName=master&jobName=win&configuration=win_vc14" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
       </details>
-    </td>
-  </tr>
-  <tr>
-    <td>Windows</td>
-    <td>
-      <img src="https://img.shields.io/badge/Windows-disabled-lightgrey.svg" alt="Windows disabled">
     </td>
   </tr>
 </table>
